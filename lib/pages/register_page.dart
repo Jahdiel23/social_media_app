@@ -2,19 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:social_media_app/components/button.dart';
 import 'package:social_media_app/components/text_field.dart';
 
-
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+class RegisterPage extends StatefulWidget {
+  const RegisterPage({super.key});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<RegisterPage> createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
-  //edicion del texto 
+class _RegisterPageState extends State<RegisterPage> {
   final emailTextController = TextEditingController();
   final passwordTextController = TextEditingController();
-
+  final confirmPasswordTextController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +31,7 @@ class _LoginPageState extends State<LoginPage> {
                 const SizedBox(height: 50,),
             
                 //welcome back message
-                Text("Welcome back, long time we don't see you", style: TextStyle(
+                Text("Lets create an acount for you!", style: TextStyle(
                       color: Colors.grey[700],
                     ),),
             
@@ -42,12 +40,16 @@ class _LoginPageState extends State<LoginPage> {
                 // email textfiled
                 MyTextField(controller: emailTextController, 
                 hintText: 'Email', obscureText: false),
-                const SizedBox(height: 25),
+                const SizedBox(height: 10),
             
                 //inser password
                 MyTextField(controller: passwordTextController, hintText: 'Password', obscureText: true),
 
                 const SizedBox(height: 10),
+                // confirm pasword
+                MyTextField(controller: confirmPasswordTextController, hintText: 'Confirm Password', obscureText: true),
+
+                const SizedBox(height: 25),
 
                 //sing in button
                 MyButton(onTap: (){}, text: 'Sing In'),
@@ -58,14 +60,14 @@ class _LoginPageState extends State<LoginPage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text("Not a member?", 
+                    Text("Al ready have an account?", 
                     style: TextStyle(
                       color: Colors.grey[700],
                     ),),
                     const SizedBox(width: 4),
                     GestureDetector(
                       onTap: (){},
-                      child: const Text("Register now!", style: TextStyle(
+                      child: const Text("Login now", style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Colors.blue,
                       ),),
